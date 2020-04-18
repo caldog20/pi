@@ -10,28 +10,64 @@ mylcd.lcd_clear()
 wpi.digitalWrite(21,0)
 
 my_long_string = "Invalid Input, Try Again!"
+my_long_stringg = "Enter 1 or 0 only!"
 my_long_string = str_pad + my_long_string
+my_long_stringg = str_pad + my_long_stringg
+
+
+
+# Testing blink function
+
+def blink(numtimes):
+    for i in range(0, numtimes):
+        wpi.digitalWrite(21,1)
+        sleep(0.5)
+        wpi.digitalWrite(21,0)
+        sleep(0.5)
+# Blink Function for Scroll
+def blinkscroll():
+    wpi.digitalWrite(21,1)
+    sleep(0.09)
+    wpi.digitalWrite(21,0)
+    sleep(0.09)
+    
+
 
 while True:
-    testint = raw_input("Input: ")
-    var = int(testint)
-    if var is 1:
-        wpi.digitalWrite(21,1)
-        mylcd.lcd_display_string("LED IS ON", 1)
-        sleep(2)
-        mylcd.lcd_clear()
-    elif var is 0:
-        wpi.digitalWrite(21,0)
-        mylcd.lcd_display_string("LED IS OFF", 1)
-        sleep(2)
-        mylcd.lcd_clear()
-    else: 
+    try:
+        var = int(input("Input: "))
+    #var = int(testint)
+        if var is 1:
+            wpi.digitalWrite(21,1)
+            mylcd.lcd_display_string("LED IS ON", 1)
+            sleep(2)
+            mylcd.lcd_clear()
+        elif var is 0:
+            wpi.digitalWrite(21,0)
+            mylcd.lcd_display_string("LED IS OFF", 1)
+            sleep(2)
+            mylcd.lcd_clear()
+        elif var > 1:
+            print("GOOD")
+            for i in range(0, len(my_long_stringg)):
+                lcd_text = my_long_stringg[i:(i + 16)]
+                mylcd.lcd_display_string(lcd_text, 1)
+            #wpi.digitalWrite(21,1)
+            #sleep(0.09)
+            #wpi.digitalWrite(21,0)
+                blinkscroll()
+                mylcd.lcd_display_string(str_pad, 1) 
+    except NameError:
+        print("Not an Integer")
+        
+    
         for i in range(0, len(my_long_string)):
             lcd_text = my_long_string[i:(i + 16)]
             mylcd.lcd_display_string(lcd_text, 1)
-            wpi.digitalWrite(21,1)
-            sleep(0.09)
-            wpi.digitalWrite(21,0)
+            #wpi.digitalWrite(21,1)
+            #sleep(0.09)
+            #wpi.digitalWrite(21,0)
+            blinkscroll()
             mylcd.lcd_display_string(str_pad, 1)
             
 

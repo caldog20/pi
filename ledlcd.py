@@ -26,18 +26,13 @@ while True:
         mylcd.lcd_clear()
     else:
         for i in range(0, len(my_long_string)):
+            wpi.digitalWrite(21,1)
+            sleep(0.5)
+            wpi.digitalWrite(21,0)
             lcd_text = my_long_string[i:(i + 16)]
             mylcd.lcd_display_string(lcd_text, 1)
             sleep(0.09)
             mylcd.lcd_display_string(str_pad, 1)
-        sleep(0.5)
-        wpi.digitalWrite(21,1)
-        sleep(0.5)
-        wpi.digitalWrite(21,0)
-        sleep(0.5)
-        wpi.digitalWrite(21,1)
-        sleep(0.5)
-        wpi.digitalWrite(21,0)
-        mylcd.lcd_clear()
+
 
 

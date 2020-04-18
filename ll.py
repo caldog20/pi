@@ -13,8 +13,7 @@ my_long_string = "Invalid Input, Try Again!"
 my_long_string = str_pad + my_long_string
 
 while True:
-    testint = raw_input("Input: ")
-    var = int(testint)
+    var = int(input("Input:"))
     if var is 1:
         wpi.digitalWrite(21,1)
         mylcd.lcd_display_string("LED IS ON", 1)
@@ -25,14 +24,12 @@ while True:
         mylcd.lcd_display_string("LED IS OFF", 1)
         sleep(2)
         mylcd.lcd_clear()
-    else: 
+    else:
         for i in range(0, len(my_long_string)):
+            wpi.digitalWrite(21,1)
+            sleep(0.5)
+            wpi.digitalWrite(21,0)
             lcd_text = my_long_string[i:(i + 16)]
             mylcd.lcd_display_string(lcd_text, 1)
-            wpi.digitalWrite(21,1)
             sleep(0.09)
-            wpi.digitalWrite(21,0)
             mylcd.lcd_display_string(str_pad, 1)
-            
-
-

@@ -8,6 +8,7 @@ import Adafruit_DHT as dht
 
 
 
+
 # Preset Variables for simplification
 lcdftn = lcdctl.lcd()
 

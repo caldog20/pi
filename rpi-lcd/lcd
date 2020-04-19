@@ -1,6 +1,0 @@
-import RPi_I2C_driver
-from time import *
-
-lcd = RPi_I2C_driver.lcd()
-
-lcd.lcd_display_string("TEST", 2)

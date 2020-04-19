@@ -4,18 +4,8 @@ import I2C_LCD_driver
 import time
 import Adafruit_DHT as dht
 import pimods
-mylcd = I2C_LCD_driver.lcd()
 
 
-# Temp/Humidity placeholder for function
-
-sensor = 11
-pin = 20
-
-
-
-
-        
 while True:
     #mylcd.lcd_clear()
     #mylcd.lcd_display_string("Reading DHT11", 1)

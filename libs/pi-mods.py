@@ -16,10 +16,10 @@ lcdftn = lcdctl.lcd()
 
 def blinkred(red, numtimes):
     for i in range(0, numtimes):
-        wpi.digitalWrite(red,1)
-        time.time.sleep(0.5)
-        wpi.digitalWrite(red,0)
-        time.time.sleep(0.5)
+        wpi.digitalWrite(red, 1)
+        time.sleep(0.5)
+        wpi.digitalWrite(red, 0)
+        time.leep(0.5)
         
 # Blink Function for Scroll with for loop
 

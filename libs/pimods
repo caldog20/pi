@@ -26,9 +26,9 @@ def blinkred(red, numtimes):
 
 
 def blinkscroll():
-    wpi.digitalWrite(21,1)
+    wpi.digitalWrite(21, 1)
     time.sleep(0.09)
-    wpi.digitalWrite(21,0)
+    wpi.digitalWrite(21, 0)
     time.sleep(0.09)
 
 

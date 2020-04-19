@@ -1,6 +1,10 @@
+import sys
+sys.append.path('libs/')
 import I2C_LCD_driver
 from time import sleep
 import wiringpi as wpi
+import pimods
+
 
 str_pad = " " * 16
 wpi.wiringPiSetupGpio()

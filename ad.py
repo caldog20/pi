@@ -6,13 +6,12 @@ import Adafruit_DHT as dht
 import pimods
 import smbus
 
-pcdaddr = 0x48
-in0 = 0x40
 
 bus = smbus.SMBus(1)
+reading =- 1
 while True:
-    bus.write_byte(address, in0)
-    value = bus.read_byte(address)
+    bus.write_byte(0x48, 0)
+    value = bus.read_byte(0x48)
     print(value)
-    time.sleep(0.1)
+    time.sleep(1)
 

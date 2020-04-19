@@ -2,7 +2,7 @@
 import time
 import wiringpi as wpi
 import I2C_LCD_driver as lcdctl
-
+import Adafruit_DHT as dht
 
 
 

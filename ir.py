@@ -12,12 +12,14 @@ wpi.pinMode(21, 1)
 wpi.pinMode(13, 0)
 time.sleep(2)
 
-
 while True:
     ir = wpi.digitalRead(13)
     if ir is 1:
         wpi.digitalWrite(21, 1)
+        pimods.lcdstring("Motion Detected")
         time.sleep(1)
+
+        
     else:
         wpi.digitalWrite(21, 0)
 

@@ -10,7 +10,19 @@ import Adafruit_DHT as dht
 
 
 # Preset Variables for simplification
-lcdftn = lcdctl.lcd()
+lcd = lcdctl.lcd()
+
+
+# Print string on LCD - Simple
+stringvar = ""
+def lcdstring(string):
+	lcd.lcd_clear()
+	lcd.lcd_display_string(string, 1)
+	time.sleep(0.5)
+	lcd.lcd_clear
+
+
+
 
 
 # Blink RED LED function with custom iteration

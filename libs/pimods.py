@@ -9,9 +9,15 @@ wpi.pinMode(21, 1)
 
 
 
-
 # Preset Variables for simplification
-lcdftn = lcdctl.lcd()
+lcd = lcdctl.lcd()
+
+# Print string on LCD - Simple
+def lcdstring(string):
+        lcd.lcd_clear()
+        lcd.lcd_display_string(string, 1)
+        time.sleep(1)
+        lcd.lcd_clear()
 
 
 # Blink RED LED function with custom iteration

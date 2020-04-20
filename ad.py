@@ -7,7 +7,6 @@ import smbus
 
 bus = smbus.SMBus(1)
 
-
 while True:
     ## Init AN0 on module
     bus.write_byte(0x48, 0)
